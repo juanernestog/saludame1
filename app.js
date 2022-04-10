@@ -4,6 +4,14 @@ const app = express();
 const Router = express.Router();
 app.use(express.json());
 
+app.get('/makers/:name', (req, res) => {
+  let { name: nameInput } = req.params;
+  const caps = nameInput.charAt(0).toUpperCase() + nameInput.slice(1);
+  //res.json(req, res);
+  console.log('GET Request Received', caps);
+  res.send(`<h1>Hola ${caps}!<h1>`);
+});
+
 app.get('/', function (req, res) {
   // const { query: queryDestructoring } = req;
   // const { nombre: name } = queryDestructoring;

@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
   const { query: queryDestructoring } = req;
   const { nombre: name } = queryDestructoring;
   console.log('GET Request Received');
-  res.send(`<h2>Hola ${name}!<h2>`);
+  res.send(`<h1>Hola ${name}!<h1>`);
 });
 
 // // app.get('/', (req, res) => {

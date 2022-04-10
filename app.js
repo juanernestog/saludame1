@@ -5,8 +5,9 @@ const Router = express.Router();
 app.use(express.json());
 
 app.get('/', function (req, res) {
-  const { query: queryDestructoring } = req;
-  const { nombre: name } = queryDestructoring;
+  // const { query: queryDestructoring } = req;
+  // const { nombre: name } = queryDestructoring;
+  let { query: { nombre: name = 'desconocido' } = {} } = req;
   console.log('GET Request Received');
   res.send(`<h1>Hola ${name}!<h1>`);
 });
